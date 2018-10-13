@@ -1,0 +1,15 @@
+h1 StaticPages#index
+p Find me in app/views/static_pages/index.html.slim
+
+button#test_button test
+text#sample this is sample text
+
+br
+
+= link_to 'shop_list', shops_path
+
+br
+
+- @raw_shops.each do |shop|
+  = shop.name
+  br

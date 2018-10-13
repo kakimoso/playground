@@ -1,0 +1,39 @@
+h1 = link_to 'root', root_path
+h1 Listing shops
+
+#shops
+  = render partial: 'shop', collection: @shops
+.page-load-status
+  p.infinite-scroll-request
+    | loading!!
+  p.infinite-scroll-last
+    | end of contents!!!
+  p.infinite-scroll-error
+    | this is error message
+= paginate @shops
+/
+/ table
+/   thead
+/     tr
+/       th Name
+/       th Zipcode
+/       th Address
+/       th Tel
+/       th
+/       th
+/       th
+/
+/   tbody
+/     - @shops.each do |shop|
+/       tr
+/         td = shop.name
+/         td = shop.zipcode
+/         td = shop.address
+/         td = shop.tel
+/         td = link_to 'Show', shop
+/         td = link_to 'Edit', edit_shop_path(shop)
+/         td = link_to 'Destroy', shop, data: { confirm: 'Are you sure?' }, method: :delete
+/
+/ br
+/
+/ = link_to 'New Shop', new_shop_path
